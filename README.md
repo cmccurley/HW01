@@ -6,7 +6,13 @@
   <meta name="generator" content="pandoc" />
   <title>Homework 1</title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.0/katex.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.0/katex.min.css" /><script type="text/javascript">window.onload = function(){var mathElements = document.getElementsByClassName("math");
+  for (var i=0; i < mathElements.length; i++)
+  {
+   var texText = mathElements[i].firstChild
+   katex.render(texText.data, mathElements[i])
+  }}
+  </script>
 </head>
 <body>
 <div id="header">
@@ -24,31 +30,31 @@ If you have any questions address them to:</p>
 <li><p>Daniel Wells (TA) – dwells@ufl.edu</p></li>
 </ul>
 <h1 id="question-1---10-points" class="unnumbered">Question 1 - 10 points</h1>
-<p>Consider the polynomial curve fitting example discussed in class. As discussed, when the model order is <em>too</em> small, the training data is generally <em>underfit</em> and when the model order is <em>too</em> high, the result can <em>overfit</em> the training data. Write a small script of code that mimics our polynomial curve fitting function. The code should generate simulated data from the true function with added zero-mean Gaussian noise (with the true function assumed to be sinc function). The code should also generate a separate validation test data set generated in the same way. Then, after fitting the polynomial to the training data across a range of model orders and evaluated on both the training and testing data, your code should generate a plot similar to the one shown in Figure 1. Also, provide a discussion based on your plot about which model order, <span class="math inline">\(M\)</span>, should be used to avoid over-training.</p>
-<p><span class="math display">\[sinc(x) = \left\{
+<p>Consider the polynomial curve fitting example discussed in class. As discussed, when the model order is <em>too</em> small, the training data is generally <em>underfit</em> and when the model order is <em>too</em> high, the result can <em>overfit</em> the training data. Write a small script of code that mimics our polynomial curve fitting function. The code should generate simulated data from the true function with added zero-mean Gaussian noise (with the true function assumed to be sinc function). The code should also generate a separate validation test data set generated in the same way. Then, after fitting the polynomial to the training data across a range of model orders and evaluated on both the training and testing data, your code should generate a plot similar to the one shown in Figure 1. Also, provide a discussion based on your plot about which model order, <span class="math inline">M</span>, should be used to avoid over-training.</p>
+<p><span class="math display">\displaystyle sinc(x) = \left\{
 \begin{array}{ll}
       1 &amp; for \: x=0 \\
       \frac{sin(x)}{x} &amp; otherwise\\
 \end{array} 
-\right.\]</span></p>
+\right.</span></p>
 <div class="figure">
 <embed src="problem1.pdf" />
 <p class="caption">Figure 1.5 from the Bishop textbook. The y-axis corresponds to the root-mean-square error between the predicted and the true value (on either the training data or test data sets). The x-axis corresponds to the model order. </p>
 </div>
 <h1 id="question-2---10-points" class="unnumbered">Question 2 - 10 points</h1>
 <h2 id="recall" class="unnumbered">Recall:</h2>
-<p>Assuming a univariate Gaussian data likelihood given <span class="math inline">\(N\)</span> i.i.d. data points:</p>
-<p><span class="math display">\[p(\mathbf{X}|\mu) = \prod^{N}_{n=1}\mathcal{N}(x_n|\mu,\sigma^2)\]</span></p>
+<p>Assuming a univariate Gaussian data likelihood given <span class="math inline">N</span> i.i.d. data points:</p>
+<p><span class="math display">\displaystyle p(\mathbf{X}|\mu) = \prod^{N}_{n=1}\mathcal{N}(x_n|\mu,\sigma^2)</span></p>
 <p>and a Gaussian prior distribution on the mean:</p>
-<p><span class="math display">\[p(\mu|\mu_0) = \mathcal{N}(\mu|\mu_0,\sigma^{2}_{0})\]</span></p>
-<p>with fixed variances (<span class="math inline">\(\sigma^2, \sigma^{2}_{0}\)</span>, and <span class="math inline">\(\sigma^2 \neq \sigma^{2}_{0}\)</span>), the posterior distribution is given by:</p>
-<p><span class="math display">\[p(\mu|\mathbf{X}) = \mathcal{N}(\mu|\mu_N,\sigma^{2}_{N})\]</span></p>
+<p><span class="math display">\displaystyle p(\mu|\mu_0) = \mathcal{N}(\mu|\mu_0,\sigma^{2}_{0})</span></p>
+<p>with fixed variances (<span class="math inline">\sigma^2, \sigma^{2}_{0}</span>, and <span class="math inline">\sigma^2 \neq \sigma^{2}_{0}</span>), the posterior distribution is given by:</p>
+<p><span class="math display">\displaystyle p(\mu|\mathbf{X}) = \mathcal{N}(\mu|\mu_N,\sigma^{2}_{N})</span></p>
 <p>where</p>
-<p><span class="math display">\[\mu_N = \frac{\sigma^2}{N\sigma^{2}_{0} + \sigma^2}\mu_0 + \frac{N\sigma^{2}_{0}}{N\sigma^{2}_{0} + \sigma^2}\mu_{ML}\]</span></p>
-<p><span class="math display">\[\frac{1}{\sigma^{2}_{N}} = \frac{1}{\sigma^{2}} + \frac{N}{\sigma^{2}}\]</span></p>
-<p>where <span class="math inline">\(\mu_{ML}\)</span> is the maximum likelihood solution for <span class="math inline">\(\mu\)</span> given the <span class="math inline">\(N\)</span> data points.</p>
+<p><span class="math display">\displaystyle \mu_N = \frac{\sigma^2}{N\sigma^{2}_{0} + \sigma^2}\mu_0 + \frac{N\sigma^{2}_{0}}{N\sigma^{2}_{0} + \sigma^2}\mu_{ML}</span></p>
+<p><span class="math display">\displaystyle \frac{1}{\sigma^{2}_{N}} = \frac{1}{\sigma^{2}} + \frac{N}{\sigma^{2}}</span></p>
+<p>where <span class="math inline">\mu_{ML}</span> is the maximum likelihood solution for <span class="math inline">\mu</span> given the <span class="math inline">N</span> data points.</p>
 <ul>
-<li><p>In or Binomial/Beta example in class, we computed the ML and MAP solutions for the <span class="math inline">\(\mu\)</span> parameter of the Binomial distribution iteratively with an increasing number of trials/random draws. Recall, the parameter <span class="math inline">\(\mu\)</span> represented the probability of heads.</p></li>
+<li><p>In or Binomial/Beta example in class, we computed the ML and MAP solutions for the <span class="math inline">\mu</span> parameter of the Binomial distribution iteratively with an increasing number of trials/random draws. Recall, the parameter <span class="math inline">\mu</span> represented the probability of heads.</p></li>
 <li><p>In this homework question, you will do the same sort of experiment for random draws from a Gaussian distribution (i.e., a Gaussian data likelihood) with a Gaussian prior distribution on the mean parameter (assume a fixed, known variance for both the Gaussian likelihood and Gaussian prior).</p></li>
 <li><p>Write a script that iteratively draws one data point from the true Gaussian distribution (with known mean). Each iteration, compute and ML solution and the MAP solution for the Gaussian mean. After each draw, update the prior distribution to be replaced with the posterior distribution from the previous draw (just like the Binomal/Beta example in class).</p></li>
 <li><p>In your solution, provide:</p>
@@ -63,25 +69,25 @@ If you have any questions address them to:</p>
 </ul></li>
 </ul>
 <h1 id="question-3---5-points" class="unnumbered">Question 3 - 5 points</h1>
-<p>Consider <span class="math inline">\(f(\mathbf{x}) = 3\mathbf{x}^T\mathbf{x} + 4\mathbf{y}^T\mathbf{x} - 1\)</span> where <span class="math inline">\(\mathbf{x}, \mathbf{y} \in \mathbb{R}^d\)</span>.</p>
+<p>Consider <span class="math inline">f(\mathbf{x}) = 3\mathbf{x}^T\mathbf{x} + 4\mathbf{y}^T\mathbf{x} - 1</span> where <span class="math inline">\mathbf{x}, \mathbf{y} \in \mathbb{R}^d</span>.</p>
 <ol>
-<li><p>What is <span class="math inline">\(\frac{\partial f}{\partial\mathbf{x}}\)</span>? Show your work.</p></li>
+<li><p>What is <span class="math inline">\frac{\partial f}{\partial\mathbf{x}}</span>? Show your work.</p></li>
 </ol>
 <h1 id="question-4---5-points" class="unnumbered">Question 4 - 5 points</h1>
-<p>Consider <span class="math inline">\(f(\mathbf{x}) = -10\mathbf{x}^T\mathbf{Q}\mathbf{x} + 4\mathbf{y}^T\mathbf{x} + 2\)</span> where <span class="math inline">\(\mathbf{x}, \mathbf{y} \in \mathbb{R}^d\)</span>, <span class="math inline">\(\mathbf{Q} \in \mathbb{R}^{d\times d}\)</span> and <span class="math inline">\(\mathbf{Q}\)</span> is symmetric.</p>
+<p>Consider <span class="math inline">f(\mathbf{x}) = -10\mathbf{x}^T\mathbf{Q}\mathbf{x} + 4\mathbf{y}^T\mathbf{x} + 2</span> where <span class="math inline">\mathbf{x}, \mathbf{y} \in \mathbb{R}^d</span>, <span class="math inline">\mathbf{Q} \in \mathbb{R}^{d\times d}</span> and <span class="math inline">\mathbf{Q}</span> is symmetric.</p>
 <ol>
-<li><p>What is <span class="math inline">\(\frac{\partial f}{\partial\mathbf{x}}\)</span>? Show your work.</p></li>
+<li><p>What is <span class="math inline">\frac{\partial f}{\partial\mathbf{x}}</span>? Show your work.</p></li>
 </ol>
 <h1 id="question-5---5-points" class="unnumbered">Question 5 - 5 points</h1>
-<p>Consider <span class="math inline">\(f(\mathbf{x}) = 8\mathbf{x}^T\mathbf{Q}\mathbf{x} - 2\mathbf{y}^T\mathbf{Q}^T\mathbf{x} + 6\)</span> where <span class="math inline">\(\mathbf{x}, \mathbf{y} \in \mathbb{R}^d\)</span>, <span class="math inline">\(\mathbf{Q} \in \mathbb{R}^{d\times d}\)</span> and <span class="math inline">\(\mathbf{Q}\)</span> is symmetric.</p>
+<p>Consider <span class="math inline">f(\mathbf{x}) = 8\mathbf{x}^T\mathbf{Q}\mathbf{x} - 2\mathbf{y}^T\mathbf{Q}^T\mathbf{x} + 6</span> where <span class="math inline">\mathbf{x}, \mathbf{y} \in \mathbb{R}^d</span>, <span class="math inline">\mathbf{Q} \in \mathbb{R}^{d\times d}</span> and <span class="math inline">\mathbf{Q}</span> is symmetric.</p>
 <ol>
-<li><p>What is <span class="math inline">\(\frac{\partial f}{\partial\mathbf{x}^T}\)</span>? Show your work.</p></li>
-<li><p>What is <span class="math inline">\(\frac{\partial f}{\partial\mathbf{Q}}\)</span>? Show your work.</p></li>
+<li><p>What is <span class="math inline">\frac{\partial f}{\partial\mathbf{x}^T}</span>? Show your work.</p></li>
+<li><p>What is <span class="math inline">\frac{\partial f}{\partial\mathbf{Q}}</span>? Show your work.</p></li>
 </ol>
 <h1 id="question-6---5-points" class="unnumbered">Question 6 - 5 points</h1>
-<p>Consider <span class="math inline">\(f(\mathbf{x}) = \left\|\mathbf{4x}\right\|_{2}^{2}\)</span> where <span class="math inline">\(\mathbf{x} \in \mathbb{R}^d\)</span>.</p>
+<p>Consider <span class="math inline">f(\mathbf{x}) = \left\|\mathbf{4x}\right\|_{2}^{2}</span> where <span class="math inline">\mathbf{x} \in \mathbb{R}^d</span>.</p>
 <ol>
-<li><p>What is <span class="math inline">\(\frac{\partial f}{\partial\mathbf{x}}\)</span>? Show your work.</p></li>
+<li><p>What is <span class="math inline">\frac{\partial f}{\partial\mathbf{x}}</span>? Show your work.</p></li>
 </ol>
 </body>
 </html>
