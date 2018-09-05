@@ -34,7 +34,7 @@ If you have any questions address them to:</p>
 \end{array} 
 \right." /><br /></p>
 <div class="figure">
-<embed src="problem1.png" />
+<embed src="problem1.jpg" />
 <p class="caption">Figure 1.5 from the Bishop textbook. The y-axis corresponds to the root-mean-square error between the predicted and the true value (on either the training data or test data sets). The x-axis corresponds to the model order. </p>
 </div>
 <h1 id="question-2---10-points" class="unnumbered">Question 2 - 10 points</h1>
