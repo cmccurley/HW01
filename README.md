@@ -29,5 +29,8 @@ If you have any questions address them to:
 
 -   Daniel Wells (TA) – dwells@ufl.edu
 
+## Homework 1 Questions
+
+Homework 1 questions are documented here: [Homework1 Questions]()
 
 
