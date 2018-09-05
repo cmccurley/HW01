@@ -1,12 +1,9 @@
 ---
 # Homework 1
-...
 
 ## Due: September 13, 2018, 11:59 PM EST
-=========================================
 
 ## Instructions
-================
 
 Your homework submission must cite any references used (including
 articles, books, code, websites, and personal communications). All
