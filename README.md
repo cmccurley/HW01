@@ -1,11 +1,11 @@
 ---
-title: Homework 1
+# Homework 1
 ...
 
-**Due: September 13, 2018, 11:59 PM EST** {#due-september-13-2018-1159-pm-est .unnumbered}
+## Due: September 13, 2018, 11:59 PM EST
 =========================================
 
-**Instructions** {#instructions .unnumbered}
+## Instructions
 ================
 
 Your homework submission must cite any references used (including
