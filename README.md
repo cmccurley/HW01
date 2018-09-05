@@ -12,8 +12,8 @@
 <h1 id="due-september-13-2018-1159-pm-est" class="unnumbered"><strong>Due: September 13, 2018, 11:59 PM EST</strong></h1>
 <h1 id="instructions" class="unnumbered"><strong>Instructions</strong></h1>
 <p>Your homework submission must cite any references used (including articles, books, code, websites, and personal communications). All solutions must be written in your own words, and you must program the algorithms yourself. If you do work with others, you must list the people you worked with. If you solve any problems by hand just digitize that page and submit it (make sure the problem is labeled).<br /> <br />
-Your programs must be written in Python. All code be able to compile and run for full credit. Comment all code following proper coding conventions. Remember, if we can’t read it, we can’t grade it! (For more information on python coding standards, refer to: <em>https://www.python.org/dev/peps/pep-0008/</em>)<br /> <br />
-You should submit your assignment via Github. Submit your solutions as a PDF named ”hw(hw #).pdf”. For example, homework 1 should be submitted as hw01.pdf. If the assignment requires coding, submit your code as a .py file with the same name.<br /> <br />
+Your programs must be written in Python. All code be able to compile and run for full credit. Comment all code following proper coding conventions. Remember, if we can’t read it, we can’t grade it! (For more information on python coding standards, refer to: <a href="Coding Conventions">https://www.python.org/dev/peps/pep-0008/</a>)<br /> <br />
+You should submit your assignment via Github. Submit your solutions as a PDF named "hw(hw #).pdf". For example, homework 1 should be submitted as hw01.pdf. If the assignment requires coding, submit your code as a .py file with the same name.<br /> <br />
 If you have any questions address them to:</p>
 <ul>
 <li><p>Connor McCurley (TA) – cmccurley@ufl.edu</p></li>
