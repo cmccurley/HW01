@@ -4,8 +4,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title>Homework 1</title>
-  <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
 <div id="header">
