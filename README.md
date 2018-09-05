@@ -20,7 +20,8 @@ information on python coding standards, refer to: [Coding Conventions](https://w
 You should submit your assignment via Github. Submit your solutions as a
 PDF named "hw(hw #).pdf". For example, homework 1 should be submitted
 as hw01.pdf. If the assignment requires coding, submit your working code as a
-.py file with the same name.\
+.py file with the same name.  
+
 If you have any questions address them to:
 
 -   Connor McCurley (TA) – cmccurley@ufl.edu
