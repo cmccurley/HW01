@@ -32,6 +32,6 @@ If you have any questions address them to:
 
 ## Homework 1 Questions
 
-Homework 1 questions are documented here: [Homework1 Questions](hw01.pdf)
+Homework 1 questions are documented here: [Homework1 Questions](hw01_questions.pdf)
 
 
