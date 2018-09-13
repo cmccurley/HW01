@@ -9,8 +9,8 @@ Desc:   This file demonstrates the concepts of Maximum Likelihood (ML) and
 """
 
 """ =======================  Import dependencies ========================== """
-from IPython import get_ipython
-get_ipython().magic('reset -sf')
+#from IPython import get_ipython
+#get_ipython().magic('reset -sf')
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
@@ -21,11 +21,11 @@ plt.close('all')
 
 #True distribution mean and variance
 trueMu = 4
-trueVar = 2
+trueVar = 1
 
 #Initial prior distribution mean and variance
-priorMu = 4
-priorVar = 2
+priorMu = 10
+priorVar = 1
 
 #Initial data likelihood mean and variance
 likeMu = trueMu
@@ -47,13 +47,13 @@ u = 20
 x = np.arange(l+step/2,u+step/2,step)
 plt.figure(0)
 p1 = plt.plot(x, norm(trueMu,trueVar).pdf(x), color='b')
-plt.title('Known "True" Distribution')
+plt.title('"True" Distribution')
 
 """========================= Perform ML and MAP Estimates =================="""
 #Calculate posterior and update prior for the given number of draws
 
 for samp in range (0,numDraws):
-    draw[samp,0] = np.random.normal(trueMu,trueVar,1) #Draw from the known Gaussian distribution
+    draw[samp,0] = np.random.normal(likeMu,likeVar,1) #Draw from the known Gaussian distribution
     
     #Compute the ML mean estimate
     muML[0,samp] = np.sum(draw[:,0])/(samp+1)
@@ -67,6 +67,10 @@ for samp in range (0,numDraws):
     #Update new prior as the previous iteration's posterior
     priorMu = muMAP[0,samp]
     priorVar = varMAP[0,samp]
+
+    plt.figure(0)
+    
+    
 
 """======================== Plot mean estimates over time =================="""
 #Plot convergence of ML mean
