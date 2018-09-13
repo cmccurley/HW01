@@ -37,7 +37,7 @@ If you have any questions address them to:
 
 \pagebreak
 
-\section*{Question 1 - 10 points}
+\section*{Question 1 - 3.5 points}
 Consider the polynomial curve fitting example discussed in class. As discussed, when the model order is \emph{too} small, the training data is generally \emph{underfit} and when the model order is \emph{too} high, the result can \emph{overfit} the training data.  Write a small script of code that mimics our polynomial curve fitting function.  The code should generate simulated data from the true function with added zero-mean Gaussian noise (with the true function assumed to be sinc function). The code should also generate a separate validation test data set generated in the same way.  Then, after fitting the polynomial to the training data across a range of model orders and evaluated on both the training and testing data, your code should generate a plot similar to the one shown in Figure 1.  Also, provide a discussion based on your plot about which model order, $M$, should be used to avoid over-training.
 
 \[  sinc(x) = \left\{
@@ -53,7 +53,7 @@ Consider the polynomial curve fitting example discussed in class. As discussed, 
 \caption{Figure 1.5 from the Bishop textbook.  The y-axis corresponds to the root-mean-square error between the predicted and the true value (on either the training data or test data sets).  The x-axis corresponds to the model order. }
 \end{figure}
 
-\section*{Question 2 - 10 points}
+\section*{Question 2 - 4.5 points}
 
 \subsection*{Recall:}
 
@@ -82,7 +82,7 @@ where
 \end{equation}
 
 \begin{equation}
-\frac{1}{\sigma^{2}_{N}} = \frac{1}{\sigma^{2}} + \frac{N}{\sigma^{2}}
+\frac{1}{\sigma^{2}_{N}} = \frac{1}{\sigma^{2}_0} + \frac{N}{\sigma^{2}}
 \end{equation}
 
 where $\mu_{ML}$ is the maximum likelihood solution for $\mu$ given the $N$ data points.
@@ -103,26 +103,26 @@ where $\mu_{ML}$ is the maximum likelihood solution for $\mu$ given the $N$ data
 		\end{itemize}
 \end{itemize}
 
-\section*{Question 3 - 5 points}
+\section*{Question 3 - 0.5 points}
 Consider $f(\mathbf{x}) = 3\mathbf{x}^T\mathbf{x} + 4\mathbf{y}^T\mathbf{x} - 1$ where $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$. 
 \begin{enumerate} 
 \item What is $\frac{\partial f}{\partial\mathbf{x}}$? Show your work. 
 \end{enumerate}
 
-\section*{Question 4 - 5 points}
+\section*{Question 4 - 0.5 points}
 Consider $f(\mathbf{x}) = -10\mathbf{x}^T\mathbf{Q}\mathbf{x} + 4\mathbf{y}^T\mathbf{x} + 2$ where $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, $\mathbf{Q} \in \mathbb{R}^{d\times d}$ and $\mathbf{Q}$ is symmetric.
  \begin{enumerate} 
 \item What is $\frac{\partial f}{\partial\mathbf{x}}$?  Show your work. 
 \end{enumerate}
 
-\section*{Question 5 - 5 points}
+\section*{Question 5 - 0.5 points}
 Consider $f(\mathbf{x}) = 8\mathbf{x}^T\mathbf{Q}\mathbf{x} - 2\mathbf{y}^T\mathbf{Q}^T\mathbf{x} + 6$ where $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, $\mathbf{Q} \in \mathbb{R}^{d\times d}$ and $\mathbf{Q}$ is symmetric.
 \begin{enumerate} 
 \item What is $\frac{\partial f}{\partial\mathbf{x}^T}$?  Show your work.
 \item What is $\frac{\partial f}{\partial\mathbf{Q}}$?  Show your work. 
 \end{enumerate}
 
-\section*{Question 6 - 5 points}
+\section*{Question 6 - 0.5 points}
 Consider $f(\mathbf{x}) = \left\|\mathbf{4x}\right\|_{2}^{2}$ where $\mathbf{x} \in \mathbb{R}^d$. \begin{enumerate} 
 \item What is $\frac{\partial f}{\partial\mathbf{x}}$?  Show your work. 
 \end{enumerate}
