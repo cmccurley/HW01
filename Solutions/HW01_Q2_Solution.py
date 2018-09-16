@@ -29,13 +29,8 @@ trueMu = 4
 trueVar = 1
 
 #Initial prior distribution mean and variance
-<<<<<<< HEAD:Solutions/HW01_Q2_Solution.py
 priorMu = 4
 priorVar = 0.5
-=======
-priorMu = 10
-priorVar = 1
->>>>>>> a00e25095e844d07e4caa95de3bca065662f35aa:Solutions/Q2.py
 
 #Initial data likelihood mean and variance
 likeMu = trueMu
@@ -56,23 +51,14 @@ l = -10
 u = 10
 x = np.arange(l+step/2,u+step/2,step)
 plt.figure(0)
-<<<<<<< HEAD:Solutions/HW01_Q2_Solution.py
 p1 = plt.plot(x, norm(trueMu,trueVar).pdf(x), color='r')
 plt.title('Unknown "True" Distribution')
-=======
-p1 = plt.plot(x, norm(trueMu,trueVar).pdf(x), color='b')
-plt.title('"True" Distribution')
->>>>>>> a00e25095e844d07e4caa95de3bca065662f35aa:Solutions/Q2.py
 
 """========================= Perform ML and MAP Estimates =================="""
 #Calculate posterior and update prior for the given number of draws
 
 for samp in range (0,numDraws):
-<<<<<<< HEAD:Solutions/HW01_Q2_Solution.py
-    draw[samp,0] = np.random.normal(trueMu,trueVar,1) #Draw from Gaussian data likelihood
-=======
     draw[samp,0] = np.random.normal(likeMu,likeVar,1) #Draw from the known Gaussian distribution
->>>>>>> a00e25095e844d07e4caa95de3bca065662f35aa:Solutions/Q2.py
     
     #Compute the ML mean estimate
     muML[0,samp] = np.sum(draw[:,0])/(samp+1)
