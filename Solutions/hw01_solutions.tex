@@ -53,6 +53,16 @@ Consider the polynomial curve fitting example discussed in class. As discussed, 
 \caption{Figure 1.5 from the Bishop textbook.  The y-axis corresponds to the root-mean-square error between the predicted and the true value (on either the training data or test data sets).  The x-axis corresponds to the model order. }
 \end{figure}
 
+\noindent
+\textbf{Discussion:}\\
+\noindent
+In the plot above, the optimal model order would be $M=3$.  Before 3, it can be observed that the model order was too small to fit the data.  At $M=9$, the training error goes to 0 and the validation shoots up. This is indicative of overfitting, where the training data (including noise) is 'memorized'.  The overfit model is not generalized well enough to provide low error on the test set. The training and validation errors between $M=3$ and $M=8$ are similar, so it makes sense to select the smallest $M$ as the optimal model order. \\
+
+\noindent 
+\emph{Overfitting} often occurs from a combination of training on too few samples to accurately represent the true distribution and employing too complex of a model. \\
+\noindent
+Some ways to \emph{avoid overfitting} would be to use a less complex model, add regularization, or (the best way) train with more data.
+
 \section*{Question 2 - 4.5 points}
 
 \subsection*{Recall:}
@@ -102,6 +112,14 @@ where $\mu_{ML}$ is the maximum likelihood solution for $\mu$ given the $N$ data
 			\end{itemize}
 		\end{itemize}
 \end{itemize}
+
+\noindent
+\textbf{Discussion:} \\
+\noindent
+MLE and MAP are two methods for estimating the parameters of an unknown distribution.  Given enough, representative data, MLE will often provide reliable results.  However, its weakness is revealed when working with small amounts of data. Recall the class example of flipping a coin.  If you flipped a fair coin 5 times and each of the outcomes came out as tails, MLE would say that every flip will come out as tails!  MAP addresses this problem by imposing a prior belief.  Now if we get tails 5 times in a row, but 
+we say that we believe with high certainty that the coin is fair, then our model's estimate (although not totally correct) will be closer to the true value.  Given plenty of data, the MAP solution will converge to the MLE solution. \\
+\noindent
+Some things to think about with MAP: when the prior mean is wrong (and has a small variance), the MAP solution takes a lot of data (many draws from the data likelihood) to converge to the true solution.  When the prior variance is large, you are saying that "I believe the parameters to be some value,  but with less certainty".  With a large data likelihood variance it will take significantly more data for both MLE and MAP to accurately fit the distribution (although MAP has an advantage if your prior is relatively accurate).   
 
 \section*{Question 3 - 0.5 points}
 Consider $f(\mathbf{x}) = 3\mathbf{x}^T\mathbf{x} + 4\mathbf{y}^T\mathbf{x} - 1$ where $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$. 
