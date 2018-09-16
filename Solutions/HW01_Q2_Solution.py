@@ -58,12 +58,12 @@ plt.title('Unknown "True" Distribution')
 #Calculate posterior and update prior for the given number of draws
 
 for samp in range (0,numDraws):
-    draw[samp,0] = np.random.normal(likeMu,likeVar,1) #Draw from the known Gaussian distribution
+    draw[samp,0] = np.random.normal(likeMu,likeVar,1) #Draw from the data likelihood
     
     #Compute the ML mean estimate
     muML[0,samp] = np.sum(draw[:,0])/(samp+1)
     
-    #Compute the MAP mean and variance estiamtes
+    #Compute the MAP mean and variance estimates
     muMapComp1 = ((likeVar)/((1*priorVar)+(likeVar)))*priorMu; #First component of MAP solution
     muMAPComp2 = ((1*priorVar)/((1*priorVar)+(likeVar)))*muML[0,samp] #Second component of MAP solution
     muMAP[0,samp] = muMapComp1 + muMAPComp2
@@ -87,11 +87,6 @@ for samp in range (0,numDraws):
     #Update new prior as the previous iteration's posterior
     priorMu = muMAP[0,samp]
     priorVar = varMAP[0,samp]
-    
-
-    plt.figure(0)
-    
-    
 
 """======================== Plot mean estimates over time =================="""
 #Plot convergence of ML mean
